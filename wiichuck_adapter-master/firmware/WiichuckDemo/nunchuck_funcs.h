@@ -1,14 +1,20 @@
 /*
- * Nunchuck functions  -- Talk to a Wii Nunchuck
- *
- * This library is from the Bionic Arduino course : 
- *                          http://todbot.com/blog/bionicarduino/
- *
- * 2007-11 Tod E. Kurt, http://todbot.com/blog/
- *
- * The Wii Nunchuck reading code originally from Windmeadow Labs
- *   http://www.windmeadow.com/node/42
- */
+Nunchuck functions  -- Talk to a Wii Nunchuck
+
+Developer: Numair Ahmed, B.S. Mechanical Engineering
+University of California;
+Mechanical and Aerospace Engineering Department;
+PI: Dr. Barbara Linke
+ 
+Originally developed: 2007-11 Tod E. Kurt, http://todbot.com/blog/
+The Wii Nunchuck reading code originally from Windmeadow Labs
+http://www.windmeadow.com/node/42
+ 
+RELEASE NOTES:
+7/21/2015 - Initial modifications to original script done by Tod E. Kurt
+8/13/2015 - Test run with WiiChuk and adapter
+ 
+*/
 
 #if (ARDUINO >= 100)
 #include <Arduino.h>
@@ -62,7 +68,7 @@ static void nunchuck_send_request()
     Wire.endTransmission();// stop transmitting
 }
 
-// Encode data to format that most wiimote drivers except
+// Encode data to format that most wiimote drivers accept
 // only needed if you use one of the regular wiimote drivers
 static char nunchuk_decode_byte (char x)
 {
