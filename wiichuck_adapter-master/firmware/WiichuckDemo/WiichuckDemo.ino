@@ -21,7 +21,7 @@ RELEASE NOTES:
 
 int loop_cnt=0;
 
-byte accx,accy,zbut,cbut;
+byte accx,accy,zbut,cbut,joyx, joyy;
 int ledPin = 13;
 
 
@@ -45,11 +45,15 @@ void loop()
         accy  = nunchuck_accely(); // ranges from approx 65 - 173
         zbut = nunchuck_zbutton();
         cbut = nunchuck_cbutton();
+        joyx = nunchuck_joyx();
+        joyy = nunchuck_joyy();
 
-        Serial.print("accx: "); Serial.print((byte)accx,DEC);
+        Serial.print("\taccx: "); Serial.print((byte)accx,DEC);
         Serial.print("\taccy: "); Serial.print((byte)accy,DEC);
         Serial.print("\tzbut: "); Serial.print((byte)zbut,DEC);
         Serial.print("\tcbut: "); Serial.println((byte)cbut,DEC);
+        Serial.print("\tjoyx: "); Serial.print((byte)joyx,DEC);
+        Serial.print("\tjoyy: "); Serial.print((byte)joyy,DEC);    
     }
     loop_cnt++;
     delay(1);
