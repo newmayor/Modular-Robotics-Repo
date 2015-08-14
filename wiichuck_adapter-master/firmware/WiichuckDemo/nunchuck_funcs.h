@@ -2,7 +2,7 @@
 Nunchuck functions  -- Talk to a Wii Nunchuck
 
 Developer: Numair Ahmed, B.S. Mechanical Engineering
-University of California;
+University of California, Davis;
 Mechanical and Aerospace Engineering Department;
 PI: Dr. Barbara Linke
  

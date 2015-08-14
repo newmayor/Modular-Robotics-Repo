@@ -1,9 +1,20 @@
 /*
- * WiiChuckDemo -- 
- *
- * 2008 Tod E. Kurt, http://thingm.com/
- *
- */
+Nunchuck functions  -- Talk to a Wii Nunchuck
+
+Developer: Numair Ahmed, B.S. Mechanical Engineering
+University of California, Davis;
+Mechanical and Aerospace Engineering Department;
+PI: Dr. Barbara Linke
+
+Originally developed: 2007-11 Tod E. Kurt, http://todbot.com/blog/
+The Wii Nunchuck reading code originally from Windmeadow Labs
+http://www.windmeadow.com/node/42
+
+RELEASE NOTES:
+7/21/2015 - Initial modifications to original script done by Tod E. Kurt
+8/13/2015 - Test run with WiiChuk and adapter
+
+*/
 
 #include <Wire.h>
 #include "nunchuck_funcs.h"
@@ -19,7 +30,7 @@ void setup()
     Serial.begin(19200);
     nunchuck_setpowerpins();
     nunchuck_init(); // send the initilization handshake
-    
+
     Serial.print("WiiChuckDemo ready\n");
 }
 
@@ -33,8 +44,8 @@ void loop()
         accx  = nunchuck_accelx(); // ranges from approx 70 - 182
         accy  = nunchuck_accely(); // ranges from approx 65 - 173
         zbut = nunchuck_zbutton();
-        cbut = nunchuck_cbutton(); 
-            
+        cbut = nunchuck_cbutton();
+
         Serial.print("accx: "); Serial.print((byte)accx,DEC);
         Serial.print("\taccy: "); Serial.print((byte)accy,DEC);
         Serial.print("\tzbut: "); Serial.print((byte)zbut,DEC);
@@ -43,4 +54,3 @@ void loop()
     loop_cnt++;
     delay(1);
 }
-
